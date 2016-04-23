@@ -5,14 +5,15 @@
  * Date: 2016/04/23
  * Time: 16:38
  */
-filepath == "/root/work/userdatasample.csv";
-$file = new SplFileObject($filepath);
+//$filepath = "/root/work/userdatasample.csv";
+//$file = new SplFileObject($filepath);
+$file = new SplFileObject("../work/userdatasample.csv");
 $file->setFlags(SplFileObject::READ_CSV);
 foreach ($file as $line) {
     //終端の空行を除く処理　空行の場合に取れる値は後述
     if(is_null($line[0]){
-    $records[] = $line;
- }
+    $records[] = $line
+ });
 }
 
 var_dump($records);
