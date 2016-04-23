@@ -9,14 +9,12 @@
 //$file = new SplFileObject($filepath);
 $file = new SplFileObject("../work/userdatasample.csv");
 $file->setFlags(SplFileObject::READ_CSV);
-foreach ($file as $line) {
-    //終端の空行を除く処理　空行の場合に取れる値は後述
-    if(is_null($line[0]){
-    $records[] = $line
- });
-}
+foreach ($file as $row) {
+    list($Hour, $Visitor_ID, $Customer_ID, $Geo) = $row;
+    printf("A %s is a %s with %d legs\n", $Hour, $Visitor_ID, $Customer_ID, $Geo);
+};
 
-var_dump($records);
+var_dump($row);
 /*
 Array
 (
